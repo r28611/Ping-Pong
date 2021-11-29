@@ -1,17 +1,17 @@
 //
-//  ViewController.m
+//  GameViewController.m
 //  Ping-Pong
 //
 //  Created by Margarita Novokhatskaia on 29/11/2021.
 //
 
-#import "ViewController.h"
+#import "GameViewController.h"
 
-@interface ViewController ()
+@interface GameViewController ()
 
 @end
 
-@implementation ViewController
+@implementation GameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
