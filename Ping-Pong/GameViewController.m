@@ -95,4 +95,53 @@
     [self setupScoreLabels];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        CGPoint point = [touch locationInView:self.view];
+        if (_bottomTouch == nil && point.y > HALF_SCREEN_HEIGHT) {
+            _bottomTouch = touch;
+            _paddleBottom.center = CGPointMake(point.x, point.y);
+        }
+        else if (_topTouch == nil && point.y < HALF_SCREEN_HEIGHT) {
+            _topTouch = touch;
+            _paddleTop.center = CGPointMake(point.x, point.y);
+        }
+    }
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        CGPoint point = [touch locationInView:self.view];
+        if (touch == _topTouch) {
+            if (point.y > HALF_SCREEN_HEIGHT) {
+                _paddleTop.center = CGPointMake(point.x, HALF_SCREEN_HEIGHT);
+                return;
+            }
+            _paddleTop.center = point;
+        }
+        else if (touch == _bottomTouch) {
+            if (point.y < HALF_SCREEN_HEIGHT) {
+                _paddleBottom.center = CGPointMake(point.x, HALF_SCREEN_HEIGHT);
+                return;
+            }
+            _paddleBottom.center = point;
+        }
+    }
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    for (UITouch *touch in touches) {
+        if (touch == _topTouch) {
+            _topTouch = nil;
+        }
+        else if (touch == _bottomTouch) {
+            _bottomTouch = nil;
+        }
+    }
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self touchesEnded:touches withEvent:event];
+}
+
 @end
