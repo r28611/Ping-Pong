@@ -6,6 +6,7 @@
 //
 
 #import "GameViewController.h"
+#import "User.h"
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define HALF_SCREEN_WIDTH SCREEN_WIDTH/2
@@ -34,6 +35,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self config];
+    User *user = [[User alloc]initWithName:@"Roma"];
+    [user nameToData];
+    [user writeResultsToFile];
+    [user readResultsFromFile];
 }
 
 - (void)config {
