@@ -41,13 +41,13 @@
     [user readResultsFromFile];
 }
 
-- (void)config {
-    self.view.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:135.0/255.0 blue:191.0/255.0 alpha:1.0];
-    
+- (void)setupGrid {
     _gridView = [[UIView alloc] initWithFrame:CGRectMake(0, HALF_SCREEN_HEIGHT - 2, SCREEN_WIDTH, 4)];
     _gridView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
     [self.view addSubview:_gridView];
-    
+}
+
+- (void)setupPaddles {
     _paddleTop = [[UIImageView alloc] initWithFrame:CGRectMake(30, 40, 90, 60)];
     _paddleTop.image = [UIImage imageNamed:@"paddleTop"];
     _paddleTop.contentMode = UIViewContentModeScaleAspectFit;
@@ -57,13 +57,17 @@
     _paddleBottom.image = [UIImage imageNamed:@"paddleBottom"];
     _paddleBottom.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:_paddleBottom];
-    
+}
+
+- (void)setupBall {
     _ball = [[UIView alloc] initWithFrame:CGRectMake(self.view.center.x - 10, self.view.center.y - 10, 20, 20)];
     _ball.backgroundColor = [UIColor whiteColor];
     _ball.layer.cornerRadius = 10;
     _ball.hidden = YES;
     [self.view addSubview:_ball];
-    
+}
+
+- (void)setupScoreLabels {
     _scoreTop = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 70, HALF_SCREEN_HEIGHT - 70, 50, 50)];
     _scoreTop.textColor = [UIColor whiteColor];
     _scoreTop.text = @"0";
@@ -77,6 +81,18 @@
     _scoreBottom.font = [UIFont systemFontOfSize:40.0 weight:UIFontWeightLight];
     _scoreBottom.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:_scoreBottom];
+}
+
+- (void)config {
+    self.view.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:135.0/255.0 blue:191.0/255.0 alpha:1.0];
+    
+    [self setupGrid];
+    
+    [self setupPaddles];
+    
+    [self setupBall];
+    
+    [self setupScoreLabels];
 }
 
 @end
