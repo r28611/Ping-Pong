@@ -39,6 +39,12 @@
     [user nameToData];
     [user writeResultsToFile];
     [user readResultsFromFile];
+    NSLog(@"view did load");
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"view will appear");
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -46,12 +52,24 @@
     
     [self becomeFirstResponder];
     [self newGame];
+    NSLog(@"view did appear");
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"view will disappear");
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
     [self resignFirstResponder];
+    NSLog(@"view did disappear");
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    NSLog(@"view will transition");
 }
 
 - (void)setupGrid {
