@@ -14,6 +14,7 @@
 		ABC56C47275563BA00E276F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC56C46275563BA00E276F9 /* Assets.xcassets */; };
 		ABC56C4A275563BA00E276F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC56C48275563BA00E276F9 /* LaunchScreen.storyboard */; };
 		ABC56C4D275563BA00E276F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC56C4C275563BA00E276F9 /* main.m */; };
+		ABC56C5527567EBE00E276F9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC56C5427567EBE00E276F9 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		ABC56C49275563BA00E276F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABC56C4B275563BA00E276F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABC56C4C275563BA00E276F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ABC56C5327567EBE00E276F9 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		ABC56C5427567EBE00E276F9 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,8 @@
 				ABC56C3D275563B700E276F9 /* SceneDelegate.h */,
 				ABC56C3E275563B700E276F9 /* SceneDelegate.m */,
 				ABC56C40275563B700E276F9 /* GameViewController.h */,
+				ABC56C5327567EBE00E276F9 /* User.h */,
+				ABC56C5427567EBE00E276F9 /* User.m */,
 				ABC56C41275563B700E276F9 /* GameViewController.m */,
 				ABC56C43275563B700E276F9 /* Main.storyboard */,
 				ABC56C46275563BA00E276F9 /* Assets.xcassets */,
@@ -146,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC56C5527567EBE00E276F9 /* User.m in Sources */,
 				ABC56C42275563B700E276F9 /* GameViewController.m in Sources */,
 				ABC56C3C275563B700E276F9 /* AppDelegate.m in Sources */,
 				ABC56C4D275563BA00E276F9 /* main.m in Sources */,
